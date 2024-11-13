@@ -6,7 +6,7 @@
 /*   By: ihaffout <ihaffout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:34:21 by ihaffout          #+#    #+#             */
-/*   Updated: 2024/11/10 16:21:55 by ihaffout         ###   ########.fr       */
+/*   Updated: 2024/11/13 14:20:01 by ihaffout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 
 int main()
 {
-    Contact contact;
     PhoneBook phonebook;
     std::string command;
 
     while (1)
     {
-        std::cout << "  => Eenter a command: ";
+        std::cout << "  => Enter a command: ";
         std::getline(std::cin, command);
-        // std::cin >> command;
         if (std::cin.eof())
         {
             std::cout << std::endl;
