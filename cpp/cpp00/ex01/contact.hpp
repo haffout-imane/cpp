@@ -6,14 +6,14 @@
 /*   By: ihaffout <ihaffout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:13:53 by ihaffout          #+#    #+#             */
-/*   Updated: 2024/11/10 10:45:33 by ihaffout         ###   ########.fr       */
+/*   Updated: 2024/11/23 02:13:54 by ihaffout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
-    #include <iostream>
+#include <iostream>
 
 class Contact
 {

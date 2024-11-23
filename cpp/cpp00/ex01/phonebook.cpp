@@ -6,7 +6,7 @@
 /*   By: ihaffout <ihaffout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:13:44 by ihaffout          #+#    #+#             */
-/*   Updated: 2024/11/10 16:45:51 by ihaffout         ###   ########.fr       */
+/*   Updated: 2024/11/23 01:27:16 by ihaffout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,14 @@ int    PhoneBook::add_contact()
     std::getline(std::cin ,user_ds);
     if(user_ds.empty())
         return(std::cout << "* You should enter a dark secret! *" << std::endl, 1);
-    if (contacts_nbr == 2)
+    if (contacts_nbr == 8)
         contacts[index].set_info(user_fn, user_ln, user_nn, user_phn, user_ds);
     else 
     {
         contacts[index].set_info(user_fn, user_ln, user_nn, user_phn, user_ds);
         contacts_nbr++;
     }
-    index = (index + 1) % 2;
+    index = (index + 1) % 8;
     return(0);
 }
 
@@ -93,21 +93,21 @@ void    PhoneBook::search_contact()
         }
         catch(const std::out_of_range &s)
         {
-            std::cout << "* You must enter an integer! *";
+            std::cout << "* You must enter an integer! *" << std::endl;
             return;
         }
         catch( const std::invalid_argument &s)
         {
-            std::cout << "* You must enter an integer! *";
+            std::cout << "* You must enter an integer! *" << std::endl;
             return;
         }
         if (nbr < contacts_nbr)
         {
-            std::cout << " -first name: " << contacts[nbr].get_first_name() << std::endl;
-            std::cout << " -last name: " << contacts[nbr].get_last_name() << std::endl;
-            std::cout << " -nick name: " << contacts[nbr].get_nickname() << std::endl;
-            std::cout << " -phone number: " << contacts[nbr].get_phone_number() << std::endl;
-            std::cout << " -darkest secret: " << contacts[nbr].get_darkest_secret() << std::endl;
+            std::cout << "- first name: " << contacts[nbr].get_first_name() << std::endl;
+            std::cout << "- last name: " << contacts[nbr].get_last_name() << std::endl;
+            std::cout << "- nick name: " << contacts[nbr].get_nickname() << std::endl;
+            std::cout << "- phone number: " << contacts[nbr].get_phone_number() << std::endl;
+            std::cout << "- darkest secret: " << contacts[nbr].get_darkest_secret() << std::endl;
         }
         else 
             std::cout << "* YOU don't have this contact! *" << std::endl;

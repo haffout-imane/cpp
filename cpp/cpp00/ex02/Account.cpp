@@ -6,7 +6,7 @@
 /*   By: ihaffout <ihaffout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 07:48:36 by ihaffout          #+#    #+#             */
-/*   Updated: 2024/11/12 18:11:06 by ihaffout         ###   ########.fr       */
+/*   Updated: 2024/11/22 04:14:57 by ihaffout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,5 +142,3 @@ void	Account::displayStatus( void ) const
     std::cout << "deposits:" << _nbDeposits << ";";
     std::cout << "withdrawals:" << _nbWithdrawals << std::endl;
 }
-
-
