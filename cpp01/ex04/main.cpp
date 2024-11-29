@@ -29,32 +29,22 @@ std::string ft_replace(std::string str, std::string s1, std::string s2)
     return (result);
 }
 
-int main()
+int main(int ac, char **av)
 {
-    
-    std::string fileName, s1, s2, tmp, result;
-    std::cout << " => Enter a file name: ";
-    std::getline(std::cin, fileName);
-    if(std::cin.eof())
-        return(1);
-    std::cout << " => Enter the first string: ";
-    std::getline(std::cin, s1);
-    if(std::cin.eof())
-        return(1);
-    std::cout << " => Enter the second string: ";
-    std::getline(std::cin, s2);
-    if(std::cin.eof())
-        return(1);
-    std::ifstream infile(fileName);
-    std::getline(infile, tmp, '\0');
-    if(!infile.is_open())
-        return (std::cout << "Error: file doesnt exist or not enough permissions to open it" << std::endl, 1);  
-    result= ft_replace(tmp, s1, s2);
-    fileName.append(".replace");
-    std::ofstream outfile(fileName, std::ios::trunc);
-    if(!outfile.is_open())
-        return (std::cout << "Error: can't create the " << fileName << " file!" << std::endl, 1);  
-    outfile << result;
-    outfile.close();
-    
+    if(ac == 4)
+    {
+        std::string tmp, result, name;
+        name = name.append(av[1]);
+        name.append(".replace");
+        std::ifstream infile(av[1]);
+        std::getline(infile, tmp, '\0');
+        if(!infile.is_open())
+            return (std::cout << "Error: file doesnt exist or not enough permissions to open it" << std::endl, 1);  
+        result= ft_replace(tmp, av[2], av[3]);
+        std::ofstream outfile(name, std::ios::trunc);
+        if(!outfile.is_open())
+            return (std::cout << "Error: can't create the " << av[1] << " file!" << std::endl, 1);  
+        outfile << result;
+        outfile.close();
+    }  
 }
