@@ -6,7 +6,7 @@
 /*   By: ihaffout <ihaffout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 03:55:28 by ihaffout          #+#    #+#             */
-/*   Updated: 2024/12/04 01:37:19 by ihaffout         ###   ########.fr       */
+/*   Updated: 2024/12/12 01:24:40 by ihaffout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 Fixed::Fixed(void)
 {
-    fp_number = 0;
     std::cout << "Default constructor called" << std::endl;
+    fp_number = 0;
 }
+
 Fixed::Fixed(const Fixed &obj)
 {
     std::cout << "Copy constructor called" << std::endl; 
@@ -35,7 +36,7 @@ Fixed::Fixed(const float nbr)
     fp_number = roundf(nbr * (1 << f_bits));
 }
 
-Fixed& Fixed::operator=(const Fixed &obj)
+Fixed   &Fixed::operator=(const Fixed &obj)
 {
     std::cout << "Copy assignment operator called" << std::endl;
     if(this != &obj)
@@ -43,7 +44,7 @@ Fixed& Fixed::operator=(const Fixed &obj)
     return(*this);
 }
 
-std::ostream& operator<<(std::ostream &outstream, const Fixed &obj)
+std::ostream    &operator<<(std::ostream &outstream, const Fixed &obj)
 {
     return (outstream << obj.toFloat());
 }
@@ -51,9 +52,9 @@ std::ostream& operator<<(std::ostream &outstream, const Fixed &obj)
 Fixed::~Fixed()
 {
     std::cout << "Destructor called" << std::endl;
-    
 }
 
+// geters and seters:
 int Fixed::getRawBits(void) const
 {
     std::cout << "getRawBits member function called" << std::endl;
@@ -65,6 +66,7 @@ void Fixed::setRawBits(int const raw)
     fp_number = raw;
 }
 
+// converting functions:
 float Fixed::toFloat(void) const
 {
     return((float)fp_number / (1 << f_bits));

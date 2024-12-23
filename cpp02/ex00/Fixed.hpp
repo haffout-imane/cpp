@@ -6,7 +6,7 @@
 /*   By: ihaffout <ihaffout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 21:40:01 by ihaffout          #+#    #+#             */
-/*   Updated: 2024/12/01 06:32:18 by ihaffout         ###   ########.fr       */
+/*   Updated: 2024/12/05 04:35:33 by ihaffout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,15 @@ class Fixed
         static int const f_bits = 8;
 
     public:
+        // Orthodox Canonical Form:
         Fixed();
         Fixed(const Fixed &obj);
-        Fixed& operator=(const Fixed &obj);
+        Fixed   &operator=(const Fixed &obj);
         ~Fixed();
-        int getRawBits( void ) const;
-        void setRawBits( int const raw );
+        
+        // geters and seters:
+        int     getRawBits(void) const;
+        void    setRawBits(int const raw);
 };
 
 

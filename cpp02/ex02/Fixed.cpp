@@ -6,7 +6,7 @@
 /*   By: ihaffout <ihaffout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 03:55:28 by ihaffout          #+#    #+#             */
-/*   Updated: 2024/12/05 04:34:06 by ihaffout         ###   ########.fr       */
+/*   Updated: 2024/12/12 01:24:30 by ihaffout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 Fixed::Fixed(void)
 {
-    fp_number = 0;
     std::cout << "Default constructor called" << std::endl;
+    fp_number = 0;
 }
+
 Fixed::Fixed(const Fixed &obj)
 {
     std::cout << "Copy constructor called" << std::endl; 
@@ -80,58 +81,54 @@ int Fixed::toInt(void) const
 bool    Fixed::operator>(Fixed fp)
 {
     if(this->fp_number > fp.fp_number)
-        return(1);
-    return(0);
+        return(true);
+    return(false);
 }
 
 bool    Fixed::operator<(Fixed fp)
 {
     if(this->fp_number < fp.fp_number)
-        return(1);
-    return(0);
+        return(true);
+    return(false);
 }
 
 bool    Fixed::operator>=(Fixed fp)
 {
     if(this->fp_number >= fp.fp_number)
-        return(1);
-    return(0);
+        return(true);
+    return(false);
 }
 
 bool    Fixed::operator<=(Fixed fp)
 {
     if(this->fp_number <= fp.fp_number)
-        return(1);
-    return(0);
+        return(true);
+    return(false);
 }
 
 bool    Fixed::operator==(Fixed fp)
 {
     if(this->fp_number == fp.fp_number)
-        return(1);
-    return(0);
+        return(true);
+    return(false);
 }
 
 bool    Fixed::operator!=(Fixed fp)
 {
     if(this->fp_number != fp.fp_number)
-        return(1);
-    return(0);
+        return(true);
+    return(false);
 }
 
 // arithmetic operators:
 Fixed   Fixed::operator+(Fixed fp)
 {
-    Fixed nb;
-    nb.fp_number = this->fp_number + fp.fp_number;
-    return(nb);
+    return((Fixed(this->toFloat() + fp.toFloat())));
 }
 
 Fixed   Fixed::operator-(Fixed fp)
 {
-    Fixed nb;
-    nb.fp_number = this->fp_number - fp.fp_number;
-    return(nb);    
+    return((Fixed(this->toFloat() - fp.toFloat())));    
 }
 
 Fixed   Fixed::operator*(Fixed fp)
@@ -141,9 +138,7 @@ Fixed   Fixed::operator*(Fixed fp)
 
 Fixed   Fixed::operator/(Fixed fp)
 {
-    Fixed nb;
-    nb.fp_number = this->fp_number / fp.fp_number;
-    return(nb);
+    return((Fixed(this->toFloat() / fp.toFloat())));
 }
 
 // increment/decrement:

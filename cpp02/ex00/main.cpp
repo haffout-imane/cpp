@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ihaffout <ihaffout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/30 21:34:58 by ihaffout          #+#    #+#             */
-/*   Updated: 2024/11/30 21:35:38 by ihaffout         ###   ########.fr       */
+/*   Created: 2024/12/03 23:44:40 by ihaffout          #+#    #+#             */
+/*   Updated: 2024/12/16 23:45:43 by ihaffout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int main( void ) 
+int main(void) 
 {
     Fixed a;
     Fixed b( a );
