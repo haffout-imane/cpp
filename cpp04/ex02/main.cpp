@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/25 20:10:18 by ihaffout          #+#    #+#             */
-/*   Updated: 2025/01/01 04:03:25 by marvin           ###   ########.fr       */
+/*   Created: 2024/12/25 18:47:10 by ihaffout          #+#    #+#             */
+/*   Updated: 2025/01/01 04:47:25 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-    #include "Animal.hpp"
-
-class Cat : public Animal
-{
-    public:
-        Cat(void);
-        Cat(Cat &obj);
-        Cat &operator=(const Cat &obj);
-        ~Cat(void);
-        void    makeSound(void) const;
-};
-
-#endif
+int main()
+{    
+    {Cat cat;
+    cat.makeSound();}
+    
+    std::cout << "--------------------------------" << std::endl;
+    
+    {Dog dog;
+    dog.makeSound();}
+}

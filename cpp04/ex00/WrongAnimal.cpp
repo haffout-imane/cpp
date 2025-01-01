@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ihaffout <ihaffout@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 23:34:45 by ihaffout          #+#    #+#             */
-/*   Updated: 2024/12/29 01:52:37 by ihaffout         ###   ########.fr       */
+/*   Updated: 2025/01/01 04:02:35 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 WrongAnimal::WrongAnimal(void)
 {
-    this->type = "WrongAnimal";
+    this->type = "Default WrongAnimal";
     std::cout << "WrongAnimal: Default constructor called!" << std::endl;
 }
 

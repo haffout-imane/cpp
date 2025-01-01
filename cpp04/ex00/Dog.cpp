@@ -3,31 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ihaffout <ihaffout@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 20:10:25 by ihaffout          #+#    #+#             */
-/*   Updated: 2024/12/26 01:08:20 by ihaffout         ###   ########.fr       */
+/*   Updated: 2025/01/01 04:04:43 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(void)
+Dog::Dog(void) : Animal("dog")
 {
-    this->type = "Dog";
     std::cout << "Dog: Default constructor called!" << std::endl;
 }
 
-Dog::Dog(std::string type)
+Dog::Dog(Dog &obj) : Animal(obj)
 {
-    this->type = type;
-    std::cout << "Dog: Parameterized constructor called!" << std::endl;
-}
-
-Dog::Dog(Dog &obj)
-{
-    *this = obj;
     std::cout << "Dog: Copy constructor called!" << std::endl;
+    *this = obj;
 
 }
 

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 18:40:37 by ihaffout          #+#    #+#             */
-/*   Updated: 2025/01/01 03:52:45 by marvin           ###   ########.fr       */
+/*   Updated: 2024/12/31 23:20:36 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,6 @@ Animal  &Animal::operator=(const Animal &obj)
     if(this != &obj)
         this->type = obj.type;
     return(*this);
-}
-
-void    Animal::makeSound(void) const
-{
-    std::cout << "Animal: speaking" << std::endl;
 }
 
 std::string Animal::getType(void) const

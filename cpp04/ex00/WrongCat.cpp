@@ -3,28 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ihaffout <ihaffout@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 23:36:45 by ihaffout          #+#    #+#             */
-/*   Updated: 2024/12/28 23:53:07 by ihaffout         ###   ########.fr       */
+/*   Updated: 2025/01/01 04:06:23 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat(void)
+WrongCat::WrongCat(void) : WrongAnimal("Wrong cat")
 {
-    this->type = "WrongCat";
     std::cout << "WrongCat: Default constructor called!" << std::endl;
 }
 
-WrongCat::WrongCat(std::string type)
-{
-    this->type = type;
-    std::cout << "WrongCat: Parameterized constructor called!" << std::endl;
-}
 
-WrongCat::WrongCat(WrongCat &obj)
+WrongCat::WrongCat(WrongCat &obj) : WrongAnimal(obj)
 {
     *this = obj;
     std::cout << "WrongCat: Copy constructor called!" << std::endl;

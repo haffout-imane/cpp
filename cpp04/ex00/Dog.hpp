@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ihaffout <ihaffout@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 20:10:20 by ihaffout          #+#    #+#             */
-/*   Updated: 2024/12/25 22:50:57 by ihaffout         ###   ########.fr       */
+/*   Updated: 2025/01/01 04:04:29 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ class Dog : public Animal
 {
     public:
         Dog(void);
-        Dog(std::string type);
         Dog(Dog &obj);
         Dog &operator=(const Dog &obj);
         ~Dog(void);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ihaffout <ihaffout@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 23:36:48 by ihaffout          #+#    #+#             */
-/*   Updated: 2024/12/28 23:59:03 by ihaffout         ###   ########.fr       */
+/*   Updated: 2025/01/01 04:05:22 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ class WrongCat : public WrongAnimal
 {
     public:
         WrongCat(void);
-        WrongCat(std::string type);
         WrongCat(WrongCat &obj);
         WrongCat &operator=(const WrongCat &obj);
         ~WrongCat(void);

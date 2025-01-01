@@ -3,32 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ihaffout <ihaffout@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 20:10:23 by ihaffout          #+#    #+#             */
-/*   Updated: 2024/12/25 23:02:34 by ihaffout         ###   ########.fr       */
+/*   Updated: 2025/01/01 04:04:03 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(void)
+Cat::Cat(void) : Animal("cat")
 {
-    this->type = "Cat";
     std::cout << "Cat: Default constructor called!" << std::endl;
 }
 
-Cat::Cat(std::string type)
+Cat::Cat(Cat &obj) : Animal(obj)
 {
-    this->type = type;
-    std::cout << "Cat: Parameterized constructor called!" << std::endl;
-}
-
-Cat::Cat(Cat &obj)
-{
-    *this = obj;
     std::cout << "Cat: Copy constructor called!" << std::endl;
-
+    *this = obj;
 }
 
 Cat::~Cat(void)
