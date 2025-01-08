@@ -27,6 +27,6 @@ class Character : public ICharacter
         Character(Character &objd);
         Character &operator=(Character &obj);
         ~Character(void);
-}
+};
 
 #endif

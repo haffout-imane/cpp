@@ -23,6 +23,6 @@ class ICharacter
         virtual equip(AMateria *m) = 0;
         virtual unequip(int idx) = 0;
         virtual void use(int idx, ICharacter target) = 0;
-}
+};
 
 #endif
