@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 02:43:26 by marvin            #+#    #+#             */
-/*   Updated: 2025/01/02 23:54:40 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/08 07:32:15 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ AMateria &AMateria::operator=(AMateria &obj)
     std::cout << "AMateria: Copy assignment operator called!" << std::endl;
     if(this != &obj)
     {
-        this->type = obj->type;
+        this->type = obj.type;
     }
     return (*this);
 }

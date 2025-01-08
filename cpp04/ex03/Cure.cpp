@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
 #include "Cure.hpp"
 
 Cure::Cure(void) : AMateria("cure")
@@ -39,7 +38,7 @@ Cure &Cure::operator=(Cure &obj)
     std::cout << "Cure: Copy assignment operator called!" << std::endl;
     if(this != &obj)
     {
-        this->type = obj->type;
+        this->type = obj.type;
     }
     return (*this);
 }

@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/01 03:26:49 by marvin            #+#    #+#             */
-/*   Updated: 2025/01/01 03:26:49 by marvin           ###   ########.fr       */
+/*   Created: 2025/01/08 07:41:27 by marvin            #+#    #+#             */
+/*   Updated: 2025/01/08 07:41:27 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-#define ICE_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
     #include "AMateria.hpp"
+    #include "ICharacter.hpp"
 
-class Ice : public AMateria
+class Character : public ICharacter
 {
+    private:
+        std::string name;
+
     public:
-        Ice(void);
-        Ice(std::string & type);
-        Ice(Ice &obj);
-        Ice &operator=(Ice &obj);
-        ~Ice(void);
- 
-        virtual Ice* clone() const;
-        virtual void use(ICharacter& target);
-};
+        Character(void);
+        Character(std::sting name);
+        Character(Character &objd);
+        Character &operator=(Character &obj);
+        ~Character(void);
+}
 
 #endif
