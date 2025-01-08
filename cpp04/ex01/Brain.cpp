@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 23:15:58 by ihaffout          #+#    #+#             */
-/*   Updated: 2025/01/01 04:56:06 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/01 08:09:23 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ const std::string Brain::getIdea(int index) const
 
 void Brain::setIdea(int index, std::string idea)
 {
-    this->ideas[index] = idea;
+    if(index >= 0 && index <= 99)
+        this->ideas[index] = idea;
 }

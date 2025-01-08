@@ -23,13 +23,13 @@ class AMateria
     public:
         AMateria(void);
         AMateria(std::string & type);
-        AMateria(AMateria const &obj);
+        AMateria(AMateria &obj);
         AMateria &operator=(AMateria &obj);
         ~AMateria(void);
 
         std::string const & getType() const;
         virtual AMateria* clone() const = 0;
-        virtual void use(ICharacter& target);
+        virtual void use(ICharacter& target) = 0;
 };
 
 

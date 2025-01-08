@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 02:43:26 by marvin            #+#    #+#             */
-/*   Updated: 2025/01/01 03:04:32 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/02 23:54:40 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ AMateria::AMateria(std::string & type)
     this->type = type;    
 }
 
-AMateria::AMateria(AMateria const &obj)
+AMateria::AMateria(AMateria &obj)
 {
     std::cout << "AMateria: Copy constructor called!" << std::endl;
     *this = obj;
@@ -50,10 +50,3 @@ std::string const &AMateria::getType() const
 {
     return(this->type);
 }
-
-virtual void AMateria::use(ICharacter& target)
-{
-    
-}
-
-
