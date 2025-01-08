@@ -17,7 +17,7 @@ Character::Character(void)
     std::cout << "Character: Default constructor called!" << std::endl;
 }
 
-Character::Character(std::sting name)
+Character::Character(std::string name)
 {
     std::cout << "Character: Parameterized constructor called!" << std::endl;
 }

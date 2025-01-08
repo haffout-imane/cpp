@@ -23,7 +23,7 @@ class Character : public ICharacter
 
     public:
         Character(void);
-        Character(std::sting name);
+        Character(std::string name);
         Character(Character &objd);
         Character &operator=(Character &obj);
         ~Character(void);
