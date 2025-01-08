@@ -22,7 +22,7 @@ class AMateria
 
     public:
         AMateria(void);
-        AMateria(std::string & type);
+        AMateria(std::string const & type);
         AMateria(AMateria &obj);
         AMateria &operator=(AMateria &obj);
         ~AMateria(void);

@@ -14,7 +14,7 @@
 
 Ice::Ice(void) : AMateria("ice")
 {
-    std::cout << "Ice: Default constructor called!" << std::endl;
+    std::cout << "Ice: Default constructor called!" << std::endl;   
 }
 
 Ice::Ice(std::string & type) : AMateria("ice")
@@ -48,7 +48,7 @@ Ice* Ice::clone() const
 
 }
 
-void Ice::use(ICharacter& target) const
+void Ice::use(ICharacter& target)
 {
 
 }

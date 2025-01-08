@@ -48,7 +48,7 @@ Cure* Cure::clone() const
 
 }
 
-void Cure::use(ICharacter& target) const
+void Cure::use(ICharacter& target)
 {
 
 }

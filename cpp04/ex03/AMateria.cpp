@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ihaffout <ihaffout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 02:43:26 by marvin            #+#    #+#             */
-/*   Updated: 2025/01/08 07:32:15 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/08 09:28:44 by ihaffout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ AMateria::AMateria(void)
     this->type = "Default";
 }
 
-AMateria::AMateria(std::string & type)
+AMateria::AMateria(std::string const & type)
 {
     std::cout << "AMateria: Parameterized constructor called!" << std::endl;
     this->type = type;    
