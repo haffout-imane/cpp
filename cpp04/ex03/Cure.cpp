@@ -45,10 +45,13 @@ Cure &Cure::operator=(Cure &obj)
 
 Cure* Cure::clone() const
 {
-
+    Cure *cure = new Cure();
+    if(!cure)
+        exit(1);
+    return (cure);
 }
 
 void Cure::use(ICharacter& target)
 {
-
+    std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 }

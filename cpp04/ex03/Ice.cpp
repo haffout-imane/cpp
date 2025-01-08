@@ -45,10 +45,13 @@ Ice &Ice::operator=(Ice &obj)
 
 Ice* Ice::clone() const
 {
-
+    Ice *ice = new Ice();
+    if(!ice)
+        exit(1);
+    return(ice);
 }
 
 void Ice::use(ICharacter& target)
 {
-
+    std::cout << "shoots an ice bolt at " << target.getName() << std::endl;
 }
