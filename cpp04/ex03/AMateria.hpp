@@ -12,8 +12,9 @@
 
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
-
+    
     #include <iostream>
+    #include "ICharacter.hpp"
 
 class AMateria
 {
@@ -21,11 +22,10 @@ class AMateria
         std::string type;
 
     public:
-        AMateria(void);
         AMateria(std::string const & type);
-        AMateria(AMateria &obj);
-        AMateria &operator=(AMateria &obj);
-        ~AMateria(void);
+        AMateria(AMateria const &obj);
+        AMateria &operator=(AMateria const &obj);
+        virtual ~AMateria(void);
 
         std::string const & getType() const;
         virtual AMateria* clone() const = 0;

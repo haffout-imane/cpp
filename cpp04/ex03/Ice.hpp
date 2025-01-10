@@ -20,12 +20,11 @@ class Ice : public AMateria
 {
     public:
         Ice(void);
-        Ice(std::string & type);
-        Ice(Ice &obj);
-        Ice &operator=(Ice &obj);
+        Ice(Ice const &obj);
+        Ice &operator=(Ice const &obj);
         ~Ice(void);
  
-        virtual Ice* clone() const;
+        virtual AMateria* clone() const;
         virtual void use(ICharacter& target);
 };
 

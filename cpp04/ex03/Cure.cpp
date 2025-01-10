@@ -17,12 +17,7 @@ Cure::Cure(void) : AMateria("cure")
     std::cout << "Cure: Default constructor called!" << std::endl;
 }
 
-Cure::Cure(std::string & type) : AMateria("cure")
-{
-    std::cout << "Cure: Parameterized constructor called!" << std::endl;   
-}
-
-Cure::Cure(Cure &obj) : AMateria(obj)
+Cure::Cure(Cure const &obj) : AMateria(obj)
 {
     std::cout << "Cure: Copy constructor called!" << std::endl;
     *this = obj;
@@ -33,7 +28,7 @@ Cure::~Cure(void)
     std::cout << "Cure: Destructor called!" << std::endl;
 }
 
-Cure &Cure::operator=(Cure &obj)
+Cure &Cure::operator=(Cure const &obj)
 {
     std::cout << "Cure: Copy assignment operator called!" << std::endl;
     if(this != &obj)
@@ -43,9 +38,9 @@ Cure &Cure::operator=(Cure &obj)
     return (*this);
 }
 
-Cure* Cure::clone() const
+AMateria* Cure::clone() const
 {
-    Cure *cure = new Cure();
+    AMateria *cure = new Cure(*this);
     if(!cure)
         exit(1);
     return (cure);

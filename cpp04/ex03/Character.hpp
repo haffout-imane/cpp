@@ -14,18 +14,19 @@
 # define CHARACTER_HPP
 
     #include "AMateria.hpp"
-    #include "ICharacter.hpp"
 
 class Character : public ICharacter
 {
     private:
         std::string name;
-        AMateria *materia[4];
+        int used_slots;
+        AMateria *slots[4];
+        AMateria *leftMateria;
 
     public:
         Character(void);
         Character(std::string name);
-        Character(Character &objd);
+        Character(Character &obj);
         Character &operator=(Character &obj);
         ~Character(void);
 

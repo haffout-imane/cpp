@@ -20,12 +20,11 @@ class Cure : public AMateria
 {
     public:
         Cure(void);
-        Cure(std::string & type);
-        Cure(Cure &obj);
-        Cure &operator=(Cure &obj);
+        Cure(Cure const &obj);
+        Cure &operator=(Cure const &obj);
         ~Cure(void);
  
-        virtual Cure* clone() const;
+        virtual AMateria* clone() const;
         virtual void use(ICharacter& target);
 };
 

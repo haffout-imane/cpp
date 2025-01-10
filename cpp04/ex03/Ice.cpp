@@ -17,12 +17,7 @@ Ice::Ice(void) : AMateria("ice")
     std::cout << "Ice: Default constructor called!" << std::endl;   
 }
 
-Ice::Ice(std::string & type) : AMateria("ice")
-{
-    std::cout << "Ice: Parameterized constructor called!" << std::endl;   
-}
-
-Ice::Ice(Ice &obj) : AMateria(obj)
+Ice::Ice(Ice const &obj) : AMateria(obj)
 {
     std::cout << "Ice: Copy constructor called!" << std::endl;
     *this = obj;
@@ -33,7 +28,7 @@ Ice::~Ice(void)
     std::cout << "Ice: Destructor called!" << std::endl;
 }
 
-Ice &Ice::operator=(Ice &obj)
+Ice &Ice::operator=(Ice const &obj)
 {
     std::cout << "Ice: Copy assignment operator called!" << std::endl;
     if(this != &obj)
@@ -43,9 +38,9 @@ Ice &Ice::operator=(Ice &obj)
     return (*this);
 }
 
-Ice* Ice::clone() const
+AMateria* Ice::clone() const
 {
-    Ice *ice = new Ice();
+    AMateria *ice = new Ice(*this);
     if(!ice)
         exit(1);
     return(ice);
@@ -53,5 +48,5 @@ Ice* Ice::clone() const
 
 void Ice::use(ICharacter& target)
 {
-    std::cout << "shoots an ice bolt at " << target.getName() << std::endl;
+    std::cout << "* shoots an ice bolt at " << target.getName()  << " *" << std::endl;
 }
