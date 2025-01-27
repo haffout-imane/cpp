@@ -81,7 +81,7 @@ void convertChar(std::string _input)
 	else
 		std::cout << "To char: Non displayable" << std::endl;
 	std::cout << "To int: " << iNbr << std::endl;
-	std::cout << "To flout: " << fNbr << "f" << std::endl;	
+	std::cout << "To float: " << fNbr << "f" << std::endl;	
 	std::cout << "To double: " << dNbr << std::endl;
 }
 void convertInt(std::string _input)
@@ -96,8 +96,8 @@ void convertInt(std::string _input)
 	else
 		std::cout << "To char: Non displayable" << std::endl;
 	std::cout << "To int: " << nbr << std::endl;
-	std::cout << "To flout: " << fNbr << "f" << std::endl;	
-	std::cout << "To double: " << dNbr << std::endl;
+	std::cout << "To float: " << fNbr << ".0f" << std::endl;	
+	std::cout << "To double: " << dNbr << ".0" << std::endl;
 }
 void convertFloat(std::string _input)
 {
@@ -111,8 +111,17 @@ void convertFloat(std::string _input)
 	else
 		std::cout << "To char: Non displayable" << std::endl;
 	std::cout << "To int: " << nbr << std::endl;
-	std::cout << "To flout: " << fNbr << "f" << std::endl;	 
-	std::cout << "To double: " << dNbr << std::endl;
+	float fTmp = fNbr - std::stoi(_input);
+	if (fTmp == 0)
+		std::cout << "To float: " << fNbr << ".0f" << std::endl;
+	else
+		std::cout << "To float: " << fNbr << "f" << std::endl;
+	
+	double dTmp = dNbr - std::stoi(_input);
+	if (dTmp == 0)
+		std::cout << "To double: " << dNbr << ".0" << std::endl;
+	else
+		std::cout << "To double: " << dNbr << std::endl;
 }
 
 void convertDouble(std::string _input)
@@ -126,15 +135,45 @@ void convertDouble(std::string _input)
 		std::cout << "To char: " << c << std::endl;
 	else
 		std::cout << "To char: Non displayable" << std::endl;
+	
 	std::cout << "To int: " << nbr << std::endl;
-	std::cout << "To flout: " << fNbr << "f" << std::endl;	 
-	std::cout << "To double: " << dNbr << std::endl;
+	
+	float fTmp = fNbr - std::stoi(_input);
+	if (fTmp == 0)
+		std::cout << "To float: " << fNbr << ".0f" << std::endl;
+	else
+		std::cout << "To float: " << fNbr << "f" << std::endl;
+
+	double dTmp = dNbr - std::stoi(_input);
+	if (dTmp == 0)
+		std::cout << "To double: " << dNbr << ".0" << std::endl;
+	else
+		std::cout << "To double: " << dNbr << std::endl;
 }
 
 void convertSpecial(std::string _type)
 {
-	std::cout << "Error" << _type << std::endl; 
-	
+	if(_type == "+inf" || _type == "=inff")
+	{
+		std::cout << "char: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+        std::cout << "float: inff" << std::endl;
+        std::cout << "double: inf" << std::endl;
+	}
+	else if (_type == "-inf" || _type == "-inff")
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: -inff" << std::endl;
+		std::cout << "double: -inf" << std::endl;
+	}
+	else
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: nanf" << std::endl;
+		std::cout << "double: nan" << std::endl;
+	}
 }
 void ScalarConverter::convert(std::string _input)
 {
@@ -149,8 +188,4 @@ void ScalarConverter::convert(std::string _input)
 		convertFloat(_input);
 	else if(_type == "special")
 		convertSpecial(_type);
-	
-	
 }
-
-		 
