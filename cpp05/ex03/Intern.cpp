@@ -10,3 +10,62 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Intern.hpp"
+
+Intern::Intern() {}
+
+Intern::Intern(Intern const &obj)
+{
+    *this = obj;
+}
+
+Intern::~Intern() {}
+
+Intern & Intern::operator=(Intern const &obj)
+{
+    (void) obj;
+    return *this;
+}
+
+AForm *Intern::makeForm(std::string form, std::string target)
+{
+    std::string forms[3] = {
+                                "shrubbery creation", 
+                                "robotomy request", 
+                                "presidential pardon"
+                            };
+    AForm *(*formFuncs[3])(std::string target) = {
+                                                    newShrubberyCreationForm,
+                                                    newRobotomyRequestForm,
+                                                    newPresidentialPardonForm
+                                                };
+    for (int i = 0; i < 3; i++)
+    {
+        if (form == forms[i])
+        {
+            std::cout << "Intern creates " << form << std::endl;
+            return formFuncs[i](target);
+        }
+    }
+    throw FormNotFoundException();
+}
+
+const char *Intern::FormNotFoundException::what() const throw()
+{
+    return "Form not found";
+}
+
+AForm *newShrubberyCreationForm(std::string target)
+{
+    return new ShrubberyCreationForm(target);
+}
+
+AForm *newRobotomyRequestForm(std::string target)
+{
+    return new RobotomyRequestForm(target);
+}
+
+AForm *newPresidentialPardonForm(std::string target)
+{
+    return new PresidentialPardonForm(target);
+}
