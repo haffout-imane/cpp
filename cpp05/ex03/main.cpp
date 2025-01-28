@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
+#include "Intern.hpp"
 #include "Bureaucrat.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -18,5 +18,31 @@
 
 int main()
 {
-    
+    Intern imane;
+    Bureaucrat b("Bureaucrat", 1);
+    AForm *rrf;
+    AForm *ppf;
+    AForm *scf;
+    AForm *test;
+    try
+    {
+        rrf = imane.makeForm("robotomy request", "Bender");
+        ppf = imane.makeForm("presidential pardon", "Bender");
+        scf = imane.makeForm("shrubbery creation", "Bender");
+        test = imane.makeForm("test", "Bender");
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    b.signForm(*rrf);
+    b.executeForm(*rrf);
+    b.signForm(*ppf);
+    b.executeForm(*ppf);
+    b.signForm(*scf);
+    b.executeForm(*scf);
+    delete rrf;
+    delete ppf;
+    delete scf;
+    return 0;
 }
