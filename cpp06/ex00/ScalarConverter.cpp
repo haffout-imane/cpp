@@ -77,7 +77,7 @@ void convertChar(std::string _input)
 	double dNbr = static_cast<double>(c);
 	
 	if(std::isprint(c))
-		std::cout << "To char: " << c << std::endl;
+		std::cout << "To char: '" << c << "'" << std::endl;
 	else
 		std::cout << "To char: Non displayable" << std::endl;
 	std::cout << "To int: " << iNbr << std::endl;
@@ -92,7 +92,7 @@ void convertInt(std::string _input)
 	double dNbr = static_cast<double>(nbr);
 	
 	if(std::isprint(c))
-		std::cout << "To char: " << c << std::endl;
+		std::cout << "To char: '" << c << "'" << std::endl;
 	else
 		std::cout << "To char: Non displayable" << std::endl;
 	std::cout << "To int: " << nbr << std::endl;
@@ -107,7 +107,7 @@ void convertFloat(std::string _input)
 	double dNbr = static_cast<double>(fNbr);
 	
 	if(std::isprint(c))
-		std::cout << "To char: " << c << std::endl;
+		std::cout << "To char: '" << c << "'" << std::endl;
 	else
 		std::cout << "To char: Non displayable" << std::endl;
 	std::cout << "To int: " << nbr << std::endl;
@@ -132,7 +132,7 @@ void convertDouble(std::string _input)
 	float fNbr = static_cast<float>(dNbr);
 	
 	if(std::isprint(c))
-		std::cout << "To char: " << c << std::endl;
+		std::cout << "To char: '" << c << "'" << std::endl;
 	else
 		std::cout << "To char: Non displayable" << std::endl;
 	
