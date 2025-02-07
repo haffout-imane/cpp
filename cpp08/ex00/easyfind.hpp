@@ -14,9 +14,10 @@
 #define EASYFIND_HPP
 
     #include "iostream"
+    #include <vector>
 
 template<typename T>
-void easyfind(T p1, int p2);
+typename T::iterator easyfind(T p1, int p2);
 
     #include "easyfind.tpp"
 
