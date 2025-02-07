@@ -8,10 +8,10 @@ OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) easyfind.hpp
+$(NAME): $(OBJS) easyfind.hpp easyfind.tpp
 	c++ $(CPP_FLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp easyfind.hpp
+%.o: %.cpp easyfind.hpp easyfind.tpp
 	c++ $(CPP_FLAGS) -c $< -o $@
 
 clean:
