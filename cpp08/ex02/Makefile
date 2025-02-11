@@ -1,6 +1,6 @@
 NAME =  MutantStack
 
-SRCS = main.cpp  MutantStack.cpp
+SRCS = main.cpp
 
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
 
