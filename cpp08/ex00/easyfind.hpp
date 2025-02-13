@@ -15,6 +15,7 @@
 
     #include "iostream"
     #include <vector>
+    #include <algorithm>
 
 template<typename T>
 typename T::iterator easyfind(T p1, int p2);
