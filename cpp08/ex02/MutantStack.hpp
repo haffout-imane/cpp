@@ -23,7 +23,7 @@ class MutantStack : public std::stack<T>
     public:
         MutantStack();
         MutantStack(MutantStack const & src);
-        virtual ~MutantStack();
+        ~MutantStack();
         MutantStack & operator=(MutantStack const & src);
         typedef typename std::stack<T>::container_type::iterator iterator;
         iterator begin();
