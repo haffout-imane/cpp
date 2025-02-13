@@ -6,7 +6,7 @@
 /*   By: ihaffout <ihaffout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 01:28:56 by ihaffout          #+#    #+#             */
-/*   Updated: 2025/02/08 03:20:37 by ihaffout         ###   ########.fr       */
+/*   Updated: 2025/02/12 05:15:50 by ihaffout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Span::Span()
     this->N = 0;
 }
 
-Span::Span(int N)
+Span::Span(unsigned int N)
 {
     this->N = N;
 }
@@ -49,17 +49,14 @@ void Span::addNumber(int n)
 
 int Span::shortestSpan()
 {
-    int shortest = 0;
-    int tmp = 0;
     if(this->span.size() < 2)
         throw std::runtime_error("Span is too short!");
-    std::sort(this->span.begin(), this->span.end());
-    shortest = this->span[1] - this->span[0];
-    for(unsigned int i = 0; i < this->span.size() - 1; i++)
+    std::vector<int> tmp = this->span;
+    int shortest = tmp[1] - tmp[0];
+    for(unsigned int i = 1; i < tmp.size(); i++)
     {
-        tmp = this->span[i + 1] - this->span[i];
-        if(tmp < shortest)
-            shortest = tmp;
+        if(tmp[i] - tmp[i - 1] < shortest)
+            shortest = tmp[i] - tmp[i - 1];
     }
     return shortest;
 }
@@ -68,8 +65,9 @@ int Span::longestSpan()
 {
     if(this->span.size() < 2)
         throw std::runtime_error("Span is too short!");
-    std::sort(this->span.begin(), this->span.end());
-    return this->span[this->span.size() - 1] - this->span[0];
+    std::vector<int> tmp = this->span;
+    std::sort(tmp.begin(), tmp.end());
+    return tmp[tmp.size() - 1] - tmp[0];
 }
 
 void Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end)
