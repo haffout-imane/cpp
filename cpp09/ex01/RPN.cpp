@@ -17,15 +17,19 @@ RPN::RPN()
     
 }
 
-// RPN::RPN(RPN const & src)
-// {
-    
-// }
+RPN::RPN(RPN const & src)
+{
+    *this = src;
+}
 
-// RPN &RPN::operator=(RPN const & src)
-// {
-    
-// }
+RPN &RPN::operator=(RPN const & src)
+{
+    if(this != &src)
+    {
+        this->_stack = src._stack;
+    }
+    return *this;
+}
 
 RPN::~RPN()
 {
