@@ -25,8 +25,8 @@ class RPN
 
     public:
         RPN();
-        // RPN(RPN const & src);
-        // RPN &operator=(RPN const & src);
+        RPN(RPN const & src);
+        RPN &operator=(RPN const & src);
         ~RPN();
         void run(char *str);
         void validate(std::string str);
